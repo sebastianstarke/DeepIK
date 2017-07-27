@@ -98,7 +98,7 @@ def print_structure(weight_file_path):
 dataTrain = np.loadtxt('pa10_config000_50k.csv')
 dataTest = np.loadtxt('pa10_config000_10k.csv')
 
-trainSamples = 10000
+trainSamples = 1000
 testSamples = 500
 dimX = 7
 dimY = 6
@@ -158,22 +158,22 @@ Ytest = normalizeDataWithBounds(Ytest, dimY, bounds, -1, 1)
 model = Sequential()
 model.add(Dense(dimX, input_dim=dimX, init='uniform', bias=False))
 model.add(Activation('tanh'))
-model.add(Dropout(0.1))
-model.add(Dense(100, init='uniform', bias=False))
-model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Dropout(0.05))
+model.add(Dense(150, init='uniform', bias=False))
+model.add(Activation('tanh'))
+model.add(Dropout(0.05))
 model.add(Dense(75, init='uniform', bias=False))
-model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Activation('tanh'))
+model.add(Dropout(0.05))
 model.add(Dense(50, init='uniform', bias=False))
-model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Activation('tanh'))
+model.add(Dropout(0.05))
 model.add(Dense(25, init='uniform', bias=False))
-model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Activation('tanh'))
+model.add(Dropout(0.05))
 model.add(Dense(10, init='uniform', bias=False))
-model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Activation('tanh'))
+model.add(Dropout(0.05))
 model.add(Dense(dimY, init='uniform', bias=False))
 model.add(Activation('tanh'))
 
